@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Extension</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gemini Assistant</h1>
+        <p class="subtitle">Chat with Gemini AI</p>
+
+        <div class="input-group">
+            <label for="systemPrompt">System Prompt:</label>
+            <textarea id="systemPrompt" placeholder="You are a helpful assistant." rows="4">You identify the arguments and ideas in featured articles. Summarize the arguments provided, identifying primary arguments versus secondary/supporting ones, syllogisms, and any fallacies. Present a "steel man" argument from the opposing view. Please note that, alongside the primary article, any linked pages or supplementary content has also been fetched and inserted within the place in the article where it was linked. Use this as a way to gain extra insight into the author's thought process and argumentation.</textarea>
+        </div>
+
+        <div class="input-group">
+            <div class="label-with-button">
+                <label for="userPrompt">Your Message:</label>
+                <div class="capture-buttons">
+                    <button id="captureBtn" class="capture-btn" title="Capture page content">📋 Capture Page</button>
+                    <button id="deepCaptureBtn" class="capture-btn" disabled title="Capture linked pages">🔗 Capture Linked Pages</button>
+                </div>
+            </div>
+            <textarea id="userPrompt" placeholder="Ask anything..." rows="3"></textarea>
+            <div class="exclude-domains">
+                <input type="text" id="excludeDomains" placeholder="Skip domains (e.g., nytimes.com, facebook.com)">
+            </div>
+            <span id="captureStatus" class="capture-status"></span>
+        </div>
+
+        <button id="actionBtn" class="btn">Send to Gemini</button>
+
+        <div id="response" class="response"></div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

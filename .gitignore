@@ -1,0 +1,21 @@
+# Chrome Extension Config
+chrome-extension/config.js
+
+# macOS
+.DS_Store
+
+# Editor directories and files
+.idea
+.vscode
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Claude cache
+.claude/
+
+# Temporary files
+*.tmp
+*.temp
