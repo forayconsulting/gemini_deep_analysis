@@ -1,5 +1,6 @@
 # Chrome Extension Config
 chrome-extension/config.js
+linkedin-intro-agent/config.js
 
 # macOS
 .DS_Store

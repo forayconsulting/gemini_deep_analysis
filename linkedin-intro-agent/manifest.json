@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Intro Agent",
+  "version": "1.0.0",
+  "description": "Generates hyper-personalized introduction requests by recursively analyzing LinkedIn profiles",
+
+  "action": {
+    "default_popup": "popup.html"
+  },
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
+
+  "host_permissions": [
+    "https://handlers-referralsportal.bairesdev.com/*",
+    "https://www.linkedin.com/*",
+    "https://*.linkedin.com/*",
+    "https://generativelanguage.googleapis.com/*"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["https://handlers-referralsportal.bairesdev.com/*"],
+      "js": ["pageDetector.js"],
+      "run_at": "document_end"
+    }
+  ]
+}

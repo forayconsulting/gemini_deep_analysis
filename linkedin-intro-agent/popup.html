@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Intro Agent</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1><span class="linkedin-icon">in</span> LinkedIn Intro Agent</h1>
+        <p class="subtitle">Generate hyper-personalized introduction requests</p>
+
+        <!-- Auto-detected mode (shown when profiles detected) -->
+        <div id="autoDetectedSection" style="display: none;">
+            <div class="input-group">
+                <label for="partnerSelect">
+                    <span class="linkedin-icon">in</span> Partner (Handler)
+                </label>
+                <select id="partnerSelect" class="profile-select">
+                    <option value="">Loading...</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="prospectSelect">
+                    <span class="linkedin-icon">in</span> Prospect
+                </label>
+                <select id="prospectSelect" class="profile-select">
+                    <option value="">Select prospect...</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Manual mode (shown when no profiles detected) -->
+        <div id="manualInputSection">
+            <div class="input-group">
+                <label for="handlerUrl">
+                    <span class="linkedin-icon">in</span> Handler LinkedIn URL
+                </label>
+                <input
+                    type="text"
+                    id="handlerUrl"
+                    placeholder="https://www.linkedin.com/in/handler-name"
+                />
+            </div>
+
+            <div class="input-group">
+                <label for="prospectUrl">
+                    <span class="linkedin-icon">in</span> Prospect LinkedIn URL
+                </label>
+                <input
+                    type="text"
+                    id="prospectUrl"
+                    placeholder="https://www.linkedin.com/in/prospect-name"
+                />
+            </div>
+        </div>
+
+        <!-- Exploration depth selector -->
+        <div class="input-group">
+            <label for="depthSelect">Exploration Depth</label>
+            <div class="select-wrapper">
+                <select id="depthSelect">
+                    <option value="1">Quick (Profiles only)</option>
+                    <option value="2" selected>Balanced (+ Current companies)</option>
+                    <option value="3">Deep (+ All companies & schools)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Status display -->
+        <div id="status" class="status"></div>
+
+        <!-- Progress bar -->
+        <div id="progressContainer" style="display: none;">
+            <div class="progress-bar">
+                <div id="progressBar" class="progress-bar-fill"></div>
+            </div>
+        </div>
+
+        <!-- Action buttons -->
+        <button id="generateBtn" class="btn">
+            ✨ Generate Intro Email
+        </button>
+
+        <!-- Email output -->
+        <div id="emailOutput" class="email-output" style="display: none;">
+            <label for="emailText">Generated Introduction Request</label>
+            <textarea id="emailText" readonly></textarea>
+            <div class="button-group">
+                <button id="copyBtn" class="btn">📋 Copy Email</button>
+                <button id="regenerateBtn" class="btn-secondary">🔄 Regenerate</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="linkedinRecursive.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>

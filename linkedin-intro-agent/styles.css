@@ -1,0 +1,318 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 450px;
+    min-height: 500px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background: linear-gradient(135deg, #0077b5 0%, #00a0dc 100%);
+}
+
+.container {
+    padding: 20px;
+}
+
+h1 {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 14px;
+}
+
+.input-group label {
+    display: block;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    font-size: 13px;
+    font-family: inherit;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.input-group input::placeholder {
+    color: #999;
+}
+
+.input-group input:disabled {
+    background: rgba(255, 255, 255, 0.7);
+    cursor: not-allowed;
+}
+
+/* Dropdown select styling */
+.input-group select.profile-select {
+    width: 100%;
+    padding: 10px 36px 10px 10px; /* Extra padding for dropdown arrow */
+    border: none;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    /* Custom dropdown arrow */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+}
+
+.input-group select.profile-select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.input-group select.profile-select:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 1);
+}
+
+.input-group select.profile-select option {
+    padding: 10px;
+    background: white;
+    color: #333;
+    font-size: 13px;
+}
+
+.input-group select.profile-select option:hover {
+    background: #f0f9ff;
+}
+
+.input-group select.profile-select:disabled {
+    background: rgba(255, 255, 255, 0.7);
+    cursor: not-allowed;
+}
+
+.btn {
+    width: 100%;
+    background: white;
+    color: #0077b5;
+    border: none;
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 12px;
+}
+
+.btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 13px;
+    padding: 8px 16px;
+    width: auto;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.status {
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    border-radius: 6px;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    display: none;
+}
+
+.status.active {
+    display: block;
+}
+
+.status.processing {
+    background: rgba(255, 255, 255, 0.95);
+    color: #0077b5;
+}
+
+.status.success {
+    background: rgba(16, 185, 129, 0.1);
+    color: #059669;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.status.error {
+    background: rgba(239, 68, 68, 0.1);
+    color: #dc2626;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: white;
+    transition: width 0.3s ease;
+    width: 0%;
+}
+
+.email-output {
+    margin-top: 12px;
+}
+
+.email-output textarea {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    font-size: 13px;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 200px;
+    line-height: 1.6;
+}
+
+.email-output textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.button-group {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.button-group button {
+    flex: 1;
+}
+
+.linkedin-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: #0077b5;
+    color: white;
+    border-radius: 2px;
+    text-align: center;
+    line-height: 16px;
+    font-size: 10px;
+    font-weight: bold;
+    margin-right: 6px;
+}
+
+.url-preview {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 4px;
+    word-break: break-all;
+}
+
+.detected-profiles {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 12px;
+}
+
+.detected-profiles h3 {
+    color: white;
+    font-size: 12px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.profile-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.profile-item {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: white;
+}
+
+.profile-item .linkedin-icon {
+    margin-right: 8px;
+}
+
+.profile-item .profile-name {
+    flex: 1;
+    font-weight: 500;
+}
+
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper::after {
+    content: '▼';
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #666;
+    font-size: 10px;
+}
