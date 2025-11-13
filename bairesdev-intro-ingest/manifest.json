@@ -13,13 +13,10 @@
     "https://www.linkedin.com/*",
     "https://bairesdevsales.app.n8n.cloud/*"
   ],
-  "action": {
-    "default_popup": "popup.html"
-  },
   "content_scripts": [
     {
       "matches": ["https://handlers-referralsportal.bairesdev.com/intros*"],
-      "js": ["content.js"],
+      "js": ["config.js", "content.js"],
       "run_at": "document_idle"
     }
   ]
