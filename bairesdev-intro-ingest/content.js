@@ -222,6 +222,8 @@
     const cells = Array.from(row.querySelectorAll('td'));
 
     const intro = {
+      introId: '',
+      handlerName: '',
       partnerName: '',
       partnerProfile: '',
       partnerCompany: '',
@@ -238,6 +240,8 @@
     if (!columnMap) {
       // Fallback to default column positions
       extractByIndex(cells, intro, {
+        'Intro Id': 0,
+        'Partner Handler': 10, // Adjust based on actual column position
         'Partner Company': 2,
         'Partner Name': 3,
         'Prospect Name': 6,
@@ -248,6 +252,16 @@
     }
 
     // Use dynamic column mapping
+    const introIdIdx = columnMap['Intro Id'];
+    if (introIdIdx !== undefined && cells[introIdIdx]) {
+      intro.introId = extractText(cells[introIdIdx]);
+    }
+
+    const handlerNameIdx = columnMap['Partner Handler'];
+    if (handlerNameIdx !== undefined && cells[handlerNameIdx]) {
+      intro.handlerName = extractText(cells[handlerNameIdx]);
+    }
+
     const partnerCompanyIdx = columnMap['Partner Company'];
     if (partnerCompanyIdx !== undefined && cells[partnerCompanyIdx]) {
       intro.partnerCompany = extractText(cells[partnerCompanyIdx]);
@@ -284,6 +298,16 @@
    * Helper function for fallback extraction using hardcoded indices
    */
   function extractByIndex(cells, intro, indexMap) {
+    const introIdIdx = indexMap['Intro Id'];
+    if (introIdIdx !== undefined && cells[introIdIdx]) {
+      intro.introId = extractText(cells[introIdIdx]);
+    }
+
+    const handlerNameIdx = indexMap['Partner Handler'];
+    if (handlerNameIdx !== undefined && cells[handlerNameIdx]) {
+      intro.handlerName = extractText(cells[handlerNameIdx]);
+    }
+
     const partnerCompanyIdx = indexMap['Partner Company'];
     if (cells[partnerCompanyIdx]) {
       intro.partnerCompany = extractText(cells[partnerCompanyIdx]);
