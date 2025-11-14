@@ -20,3 +20,10 @@ linkedin-intro-agent/config.js
 # Temporary files
 *.tmp
 *.temp
+
+# Generated documentation files
+data-flow-visualization.pdf
+generate-pdf.js
+
+# BairesDev ingest config
+bairesdev-intro-ingest/config.js
